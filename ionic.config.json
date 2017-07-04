@@ -1,5 +1,14 @@
 {
-  "name": "list-detail-maps",
+  "name": "ionic-maps",
   "app_id": "",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*",
+    "scss/**/*"
+  ],
   "type": "ionic1"
 }

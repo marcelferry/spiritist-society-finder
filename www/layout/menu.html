@@ -1,0 +1,151 @@
+<script id="layout/ambientes.html" type="text/ng-template">
+    <ion-popover-view>
+        <ion-header-bar>
+            <h1 class="title">Escolha Ambiente</h1>
+        </ion-header-bar>
+        <ion-content>
+            <div class="list">
+                <a class="item" ng-click="mudarAmbiente(C_TIPO_AMBIENTE.producao)">Produção</a>
+                <a class="item" ng-click="mudarAmbiente(C_TIPO_AMBIENTE.homologacao)">Homologação</a>
+                <a class="item" ng-click="mudarAmbiente(C_TIPO_AMBIENTE.teste)">Teste</a>
+                <a class="item" ng-click="mudarAmbiente(C_TIPO_AMBIENTE.desenvolvimento)">Desenvolvimento</a>
+            </div>
+        </ion-content>
+    </ion-popover-view>
+</script>
+
+<script id="layout/popoverAvatar.html" type="text/ng-template">
+    <ion-popover-view style="height: 290px; width: 322px" >
+        <ion-header-bar>
+            <h1 class="title popoverAvatar">Escolha sua Imagem</h1>
+        </ion-header-bar>
+        <ion-content>
+            <div class="row">
+                <div class="col col-50" >
+                    <a href ng-click="takePicture(usuario.matricula, true)">
+                        <div class="icone-camera"></div>
+                    </a>
+                </div>
+                <div class="col col-50" >
+                    <a href ng-click="takePicture(usuario.matricula, false)">
+                        <div class="icone-galeria"></div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-33"></div>
+                <div class="col col-33 col-center">
+                    <a class="ion-close avatar-cancelar" ng-click="popoverAvatar.hide()"> Cancelar</a>
+                </div>
+                <div class="col col-33"></div>
+            </div>
+        </ion-content>
+    </ion-popover-view>
+</script>
+
+<ion-side-menus id="navs-menus" enable-menu-with-back-views="false">
+
+    <!-- Conteúdo principal do app -->
+    <ion-side-menu-content>
+
+        <!-- Cabeçalho -->
+        <ion-nav-bar class="bar-stable">
+
+            <!-- <ion-nav-back-button ng-click="backButtonClick()"> -->
+
+            <!-- Botão "VOLTAR" padrão do cabeçalho -->
+            <ion-nav-back-button class="button-light">
+            </ion-nav-back-button>
+
+            <!-- Botões no cabeçalho (a esquerda) -->
+            <ion-nav-buttons side="left">
+                <!-- Botão para abrir o menu -->
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+                </button>
+            </ion-nav-buttons>
+
+            <!-- Botões no cabeçalho (a direita) -->
+            <ion-nav-buttons side="right">
+                <!-- Ricaon: Retirando para atender mantis 2718 -->
+                <!-- Botão "?" para mostrar as regras da campanha -->
+                <!--
+                    <button id="info-button" ng-click="regrasCampanhaModal.show()" class="button button-icon button-clear ion-ios-help-outline">
+                    </button>
+                -->
+            </ion-nav-buttons>
+        </ion-nav-bar>
+
+        <!-- Conteúdo principal do app (tirando a barra de navegação) -->
+        <ion-nav-view name="menuContent">
+        </ion-nav-view>
+    </ion-side-menu-content>
+
+    <!-- Sidemenu do app -->
+    <ion-side-menu side="left" id="guia-sidebar">
+
+        <!-- Conteúdo (opções) do sidemenu -->
+        <ion-content>
+
+            <!-- Cabeçalho do sidemenu (avatar do usuário, nome etc.) -->
+            <div id="side-cover">
+
+                <!-- Foto do usuário que será clicada -->
+                <div class="row">
+                    <div class="col col-33">
+                        <a href ng-click="popoverAvatar.show($event)" ng-show="{{rootScope.usuario.provider == 'email'}}">
+                            <div style="{{usuario.avatarStyle}}; background-repeat: no-repeat; background-size: cover;" class="guia-avatar"></div>
+                        </a>
+                        <div ng-hide="{{rootScope.usuario.provider == 'email'}}" style="{{usuario.avatarStyle}}; background-repeat: no-repeat; background-size: cover;" class="guia-avatar"></div>
+                    </div>
+                    <div class="col col-33"></div>
+                    <div class="col col-33"></div>
+                </div>
+
+                <!-- Mostra o nome e a carteira do usuário -->
+                <div class="row">
+                    <div class="col">
+                        <span id="nav-username" ng-bind="usuario.nome"></span>
+                        <br/>
+                        <span id="nav-usercargo" ng-bind="usuario.email"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opções do sidemenu -->
+            <ion-list>
+
+                <!-- Radar -->
+                <ion-item class="item-icon-left" menu-close ui-sref="app.map" ng-click="menuMapa()">
+                    <i class="icon icone-mapa"></i>Radar
+                </ion-item>
+
+                <!-- Nearest -->
+                <ion-item class="item-icon-left" menu-close ui-sref="app.places" ng-click="menuCasasProximas()">
+                    <i class="icon icone-local-proximos"></i>Próximas
+                </ion-item>
+
+                <!-- By Region -->
+                <ion-item class="item-icon-left" menu-close ui-sref="app.countries" ng-click="menuPorEstado()">
+                    <i class="icon icone-cidade"></i>Por região
+                </ion-item>
+
+                <!-- Register -->
+                <ion-item class="item-icon-left" menu-close ui-sref="app.placenew" ng-click="menuNovoLocal()">
+                    <i class="icon icone-cadastrar"></i>Cadastrar<span class="badge badge-assertive" ng-bind="notificacoesNaoLidas"></span>
+                </ion-item>
+
+                <!-- Exit -->
+                <!-- <ion-item class="item-icon-left" id="side-sair-button" menu-close ui-sref="app.login" ng-click="logoff()"> -->
+                <ion-item class="item-icon-left" menu-close ui-sref="app.login" ng-click="logoff()">
+                    <i class="icon icone-sair"></i>Sair
+                </ion-item>
+
+                <!-- Mudar ambiente -->
+                <ion-item class="item-icon-left" menu-close ng-click="popoverAmbientes.show($event)" ng-show="usuario.administrador">
+                    <i class="icon ion-ios-refresh-outline"></i>Mudar Ambiente
+                </ion-item>
+
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

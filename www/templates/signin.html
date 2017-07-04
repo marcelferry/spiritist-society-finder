@@ -1,0 +1,36 @@
+<ion-view  id="login-view"  hide-nav-bar="true">
+    <ion-content>
+        <!-- Cabeçalho -->
+        <h1 class="title">Mapa das<br></b4><span>Casas Espíritas</span></h1>
+
+        <form>
+          <div id="login-box">
+            <div class="row">
+              <div class="col">
+                <ion-list>
+                    <!-- Email -->
+                    <label class="item item-input">
+                        <i class="icon ion-ios-email placeholder-icon"></i>
+                        <input type="email" placeholder="Insira seu email..." ng-model="data.email">
+                    </label>
+                    <!-- Senha -->
+                    <label class="item item-input">
+                        <i class="icon placeholder-icon ion-locked"></i>
+                        <input type="password" placeholder="Insira sua senha..." ng-model="data.password">
+                    </label>
+                </ion-list>
+                <div  id="button-login" class="col button-row text-center">
+                  <button class="button button-stable button-block button-calm" ng-click="doLogin()">ENTRAR</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+        <!-- Logotipo -->
+        <div class="row">
+            <div class="col"></div>
+            <div class="col col-80 text-center"><img id="patrocinio" src="img/patrociniobranco0.png"></div>
+            <div class="col"></div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -21,3 +21,913 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+@font-face {
+    font-family: "OpenSans";
+    src: url('../fonts/OpenSans-Bold.ttf');
+    src: url('../fonts/OpenSans-ExtraBold.ttf');
+    src: url('../fonts/OpenSans-Light.ttf');
+    src: url('../fonts/OpenSans-Regular.ttf');
+    src: url('../fonts/OpenSans-Semibold.ttf');
+}
+@font-face {
+    font-family: "Roboto";
+    src: url('../fonts/Roboto-Light.ttf');
+    src: url('../fonts/Roboto-Medium.ttf');
+    src: url('../fonts/Roboto-Regular.ttf');
+}
+
+.reverse {
+    transform: rotate(180deg);
+}
+
+.coluna-filtro {
+    color: #03AEEF!important;
+}
+
+.bold {
+    font-weight: 600;
+}
+.italic {
+    font-style:  italic;
+}
+body {
+    font-family: OpenSans;
+}
+
+.login-container {
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    height: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#efad62), color-stop(100%,#f7d47c));
+    background: -webkit-linear-gradient(top, #efad62 0%,#f7d47c 100%);
+}
+
+.login-container > .button-row img {
+    max-width: 80%;
+}
+
+.login-container > .header {
+    -webkit-flex: 4;
+    padding-top: 20px;
+}
+
+.scroll {
+    height: 100%;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+#intmap{
+    width:80%;
+    height:250px;
+    margin:10px auto;
+    box-shadow:0 3px 25px black;
+}
+
+/** Styling for the username field **/
+label.item.has-error {
+  border-bottom: 2px solid red;
+}
+
+/** Styling for the password field when an error exists**/
+label.item.has-error-lr {
+  border-left: 2px solid red;
+  border-right: 2px solid red;
+}
+
+/** Styling for the password field when an error has been resolved**/
+label.item.valid-lr {
+  border-left: 2px solid green;
+  border-right: 2px solid green;
+}
+
+/** Styling for the error text and container **/
+.form-errors {
+  margin: 5px 0
+}
+.form-error {
+  padding: 2px 0 2px 16px;
+  color: red;
+}
+
+/*******************
+*
+* NAVBAR E SIDEBAR
+*
+*******************/
+.subtitle {
+    width: 100%;
+    text-align: left;
+    color: darkgray;
+    font-size: 12px;
+    padding-top: 3px;
+}
+.bar .buttons span.back-text {
+    display: none;
+}
+.titleInt {
+    width: 85%;
+    text-align: left;
+    color: white;
+    font-size: 16px;
+    margin-top: -5px;
+    margin-bottom: 3px;
+}
+.selectPeriodo {
+    margin-bottom: 0px!important;
+    border-bottom: 0px;
+    border-top: 0px!important;
+    line-height: 30px;
+    background-color: transparent;
+}
+.dados {
+    border-radius: 5px;
+    padding-left: 0px;
+    width: 35%;
+}
+.dados .row {
+    padding: 0px;
+    margin: -48px 0px 0px 0px;
+}
+.dados .col {
+    border-radius: 3px;
+    width: 50%;
+    padding: 0px !important;
+    font-size: 10px;
+    color: darkgray;
+    text-align: center;
+    margin-top: 7px;
+}
+.dados .col span {
+    display: inline;
+    width: 100%;
+    font-size: 16px;
+    color: white;
+    margin-left: 5px;
+}
+.bolinhas {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.selectPeriodo .input-label {
+    color: #999999;
+    font-size: 13px;
+}
+.selectPeriodo select {
+    background-color: transparent;
+    color: #42C2F3;
+    font-size: 13px;
+    font-weight: bold
+}
+.periodo {
+    clear: both;
+    width: 100%;
+    color: #42C2F3;
+}
+.box {
+    height: 167px;
+    width: 100%;
+    text-align: center;
+    background-color: #004e70;
+}
+.tableMetas {
+    line-height: 40px;
+}
+.tableMetas .cresc {
+    color: #999;
+    font-size: 12px;
+    font-weight: bold
+}
+.tableMetas .IAM {
+    color: #999;
+    font-size: 12px;
+    font-weight: bold
+}
+.headerTable {
+    font-size: 12px;
+    line-height: 30px;
+    font-weight: bold;
+    color: #42C2F3;
+    padding-bottom: 0px;
+    border-bottom: 1px solid #f3f3f3;
+}
+#farolInt-count .col {
+    text-align: center;
+}
+/* ************************************************* */
+/* DEFINIR O TAMANHO DAS BOLINHAS NO PLACAR DE METAS */
+/* ************************************************* */
+/* Definimos 40px x 40px para que fique OK no iPhone 4 */
+/* Se vamos definir tamanho maior do que isso, o Ranking sobreescreve as bolinhas */
+
+#farolInt-count .farolInt {
+    font-size: 20px;
+    padding-top: 10px;
+    height: 40px;
+    width: 40px;
+    margin-bottom: -8px;
+}
+.farolInt {
+    background-color: gray;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.15);
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.23);
+}
+.farolInt-verde {
+    background: rgb(117, 254, 180);
+    /* Old browsers */
+
+    background: -moz-linear-gradient(top, rgba(117, 254, 180, 1) 0%, rgba(7, 222, 106, 1) 100%);
+    /* FF3.6+ */
+
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(117, 254, 180, 1)), color-stop(100%, rgba(7, 222, 106, 1)));
+    background: -webkit-linear-gradient(top, rgba(117, 254, 180, 1) 0%, rgba(7, 222, 106, 1) 100%);
+    /* Chrome10+,Safari5.1+ */
+
+    background: -o-linear-gradient(top, rgba(117, 254, 180, 1) 0%, rgba(7, 222, 106, 1) 100%);
+    /* Opera 11.10+ */
+
+    background: -ms-linear-gradient(top, rgba(117, 254, 180, 1) 0%, rgba(7, 222, 106, 1) 100%);
+    /* IE10+ */
+
+    background: linear-gradient(to bottom, rgba(117, 254, 180, 1) 0%, rgba(7, 222, 106, 1) 100%);
+    /* W3C */
+}
+.farolInt-laranja {
+    background: rgb(255, 146, 0);
+    /* Old browsers */
+
+    background: -moz-linear-gradient(top, rgba(255, 146, 0, 1) 0%, rgba(239, 83, 0, 1) 100%);
+    /* FF3.6+ */
+
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 146, 0, 1)), color-stop(100%, rgba(239, 83, 0, 1)));
+    background: -webkit-linear-gradient(top, rgba(255, 146, 0, 1) 0%, rgba(239, 83, 0, 1) 100%);
+    /* Chrome10+,Safari5.1+ */
+
+    background: -o-linear-gradient(top, rgba(255, 146, 0, 1) 0%, rgba(239, 83, 0, 1) 100%);
+    /* Opera 11.10+ */
+
+    background: -ms-linear-gradient(top, rgba(255, 146, 0, 1) 0%, rgba(239, 83, 0, 1) 100%);
+    /* IE10+ */
+
+    background: linear-gradient(to bottom, rgba(255, 146, 0, 1) 0%, rgba(239, 83, 0, 1) 100%);
+    /* W3C */
+
+}
+.farolInt-azul {
+    background: rgb(118, 216, 253);
+    /* Old browsers */
+
+    background: -moz-linear-gradient(top, rgba(118, 216, 253, 1) 0%, rgba(0, 173, 239, 1) 100%);
+    /* FF3.6+ */
+
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(118, 216, 253, 1)), color-stop(100%, rgba(0, 173, 239, 1)));
+    background: -webkit-linear-gradient(top, rgba(118, 216, 253, 1) 0%, rgba(0, 173, 239, 1) 100%);
+    /* Chrome10+,Safari5.1+ */
+
+    background: -o-linear-gradient(top, rgba(118, 216, 253, 1) 0%, rgba(0, 173, 239, 1) 100%);
+    /* Opera 11.10+ */
+
+    background: -ms-linear-gradient(top, rgba(118, 216, 253, 1) 0%, rgba(0, 173, 239, 1) 100%);
+    /* IE10+ */
+
+    background: linear-gradient(to bottom, rgba(118, 216, 253, 1) 0%, rgba(0, 173, 239, 1) 100%);
+    /* W3C */
+
+}
+.farolInt-amarelo {
+    background: rgb(255, 231, 137);
+    /* Old browsers */
+
+    background: -moz-linear-gradient(top, rgba(255, 231, 137, 1) 0%, rgba(241, 215, 11, 1) 100%);
+    /* FF3.6+ */
+
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 231, 137, 1)), color-stop(100%, rgba(241, 215, 11, 1)));
+    background: -webkit-linear-gradient(top, rgba(255, 231, 137, 1) 0%, rgba(241, 215, 11, 1) 100%);
+    /* Chrome10+,Safari5.1+ */
+
+    background: -o-linear-gradient(top, rgba(255, 231, 137, 1) 0%, rgba(241, 215, 11, 1) 100%);
+    /* Opera 11.10+ */
+
+    background: -ms-linear-gradient(top, rgba(255, 231, 137, 1) 0%, rgba(241, 215, 11, 1) 100%);
+    /* IE10+ */
+
+    background: linear-gradient(to bottom, rgba(255, 231, 137, 1) 0%, rgba(241, 215, 11, 1) 100%);
+    /* W3C */
+
+}
+.bar.bar-stable {
+    height: 60px;
+    border-color: #004361;
+    background-image: none;
+}
+.has-header {
+    top: 60px;
+}
+.title.title-center.header-item {
+    top: 10px !important;
+}
+.bar.bar-stable .title,
+.bar-stable .button.button-icon {
+    top: 5px;
+    text-align: center;
+}
+
+.bar.bar-stable .title {
+    left: 20%!important;
+    right: 20%!important;
+}
+
+
+/*
+*
+* Cor principal do sistema
+*
+*/
+
+.bar.bar-stable,
+.menu .scroll-content,
+.item-complex .item-content,
+.item-radio .item-content,
+#side-cover {
+    background-color: #004e70;
+}
+/*
+*
+* Navbar da aplicação
+*
+*/
+.bar.bar-stable .title,
+.bar-stable .button.button-icon {
+    color: white;
+}
+#info-button {
+    color: #00ABED;
+}
+#info-button:before {
+    font-size: 26px;
+}
+/*
+*
+* Header da sidebar
+*
+*/
+
+#side-cover {
+    height: 150px;
+    color: white;
+    text-align: center;
+    background-image: url('../img/navbar-cover.png');
+    background-position: center;
+    background-size: 100%;
+}
+.guia-avatar {
+    -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    height: 80px;
+    border-radius: 80px;
+    background-color: white;
+    background-image: url('../img/avatar.png');
+    background-size: auto 110%;
+    background-position: center;
+}
+#nav-username {
+    font-size: 18px;
+    text-transform: capitalize;
+}
+#nav-usercargo {
+    font-size: 12px;
+}
+/*
+*
+* Sidebar
+*
+*/
+
+#guia-sidebar .item-complex .item-content,
+.item-radio .item-content {
+    color: white;
+}
+#guia-sidebar .item {
+    border-top-style: none;
+    border-bottom-color: #004361;
+    border-bottom-width: 3px;
+}
+#guia-sidebar #side-sair-button {
+    border-bottom-style: none;
+}
+#guia-sidebar .item-content .icon {
+    font-size: 30px;
+}
+
+/* ******************************** */
+/* Listas  */
+/* ******************************** */
+
+#select-container .input-label {
+    font-size: 18px;
+}
+#select-container select {
+    font-size: 19px;
+    color: #00adef;
+    text-align: left;
+    padding-right: 30px;
+}
+#select-container.item-select:after {
+    color: #03AEEF;
+    right: 5px;
+}
+#select-container.item,
+#select-container.item-select select {
+    border: none;
+    background-color: transparent;
+}
+label#select-container {
+    color: black;
+}
+
+/* **************************************************************************** */
+/* INÍCIO DA LISTA DE ITENS (PRODUTOS/COMERCIAIS/CORRETORES) EM PLACAR DE places */
+/* **************************************************************************** */
+#places-scroll {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    top: 300px;
+}
+#places-scrollInt {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    top: 44px;
+}
+#places-container {
+    text-align: center;
+}
+#places-container .row {
+    background-color: white;
+    min-height: 40px;
+}
+#places-container .col:first-child {
+    text-align: left;
+    padding: 5px 0px 0px 0px;
+}
+#places-container span,
+#places-container a {
+    text-decoration: none;
+    color: #181818;
+}
+#places-container .farol {
+    margin-top: -5px;
+}
+#places-container > .row:first-child {
+    border-bottom: #eaeaea;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    color: #9b9b9b;
+}
+#places-container > .row:first-child .col:first-child {
+    font-weight: bolder;
+}
+#places-container > .row span {
+    color: #9b9b9b;
+}
+
+/*******************
+*
+*    L O G I N
+*
+*******************/
+/*
+*
+* Cabeçalho e background
+*
+*/
+#login-view {
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#efad62), color-stop(100%,#f7d47c));
+    background: -webkit-linear-gradient(top, #efad62 0%,#f7d47c 100%);
+    background-size: 100%;
+}
+#login-view h1.title {
+    text-align: center;
+    font-size: 50px;
+    color: white;
+    line-height: 40px;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+    margin-top: 50px;
+}
+#login-view h1.title span {
+    font-size: 43px;
+}
+/*
+*
+* Caixa de login
+*
+*/
+#login-view #login-box {
+    margin-top: 25px;
+}
+#login-view #login-box label:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+#login-view #login-box label:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+::-webkit-input-placeholder {
+    text-transform: initial;
+}
+:-moz-placeholder {
+    text-transform: initial;
+}
+::-moz-placeholder {
+    text-transform: initial;
+}
+:-ms-input-placeholder {
+    text-transform: initial;
+}
+
+/*Input de login*/
+
+#login-view #login-box input {
+    font-size: 20px;
+    line-height: 20px
+}
+#login-view #login-box i {
+    font-size: 20px;
+    margin-bottom: 3px;
+    margin-right: 10px;
+}
+#login-view #button-login button {
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: rgb(0, 173, 239);
+    border-style: none;
+}
+#login-view #button-login button:active {
+    opacity: 0.5;
+}
+
+/*
+*
+* �cone dos patrocinadores
+*
+*/
+#patrocinio {
+    margin-top: 50px;
+    width: 100%;
+}
+
+/*******************
+*
+*    Menu Avatar
+*
+*******************/
+.popoverAvatar {
+    text-align: center !important;
+    font-weight: bold;
+    width: 100% !important;
+}
+.icone-camera {
+    background-image: url(../img/icone_camera.png);
+    background-position: center !important;
+    background-repeat: no-repeat;
+    width: 100% !important;
+    height: 121px;
+}
+.icone-galeria {
+    background-image: url(../img/icone_galeria.png);
+    background-position: center !important;
+    background-repeat: no-repeat;
+    width: 100% !important;
+    height: 121px;
+}
+.avatar-cancelar {
+    color: #00ADEF;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 70px;
+}
+/*
+* http://docs.angularjs.org/api/ng/directive/ngShow#usage_animations
+*/
+.list .item.item-accordion {
+    line-height: 38px;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: 0.09s all linear;
+}
+.list .item.item-accordion.ng-hide {
+    line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+    display: block !important;
+}
+/* ************************************************* */
+/* Centralizar imagem */
+/* ************************************************* */
+.centeralizar {
+    display: inline-block;
+    //\height: 100%;
+    vertical-align: middle;
+}
+
+.truncateText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* ************************************************* */
+/* Versão do App na tela de login */
+/* ************************************************* */
+.versao {
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    height: 20px;
+    /* padding-bottom(10px) + font-size(10px) = 10 + 10 = 20px */
+    margin: 0px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    font-size: 10px;
+    text-align: right;
+    color: #004E70;
+    background-color: transparent;
+    background-size: 100% 0px;
+}
+/* ************************************************* */
+/* Menu mudar ambiente */
+/* ************************************************* */
+.menuAmbiente {
+    height: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 20px;
+}
+/* ************************************************* */
+/* Bolinha com quantidades. Por exemplo: quantidade de notificações no sidemenu,  */
+/* ************************************************* */
+.icon-badge {
+    position: absolute;
+    vertical-align: middle;
+    right: 24px;
+    fill: #EF5300 100%;
+    color: #FFFFFF 100%;
+    font-size: 16px;
+}
+/* ************************************************* */
+/* Ícones do sidemenu (todos dentro de 35x35) */
+/* ************************************************* */
+.icon {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+.icone-mapa {
+  background-image: url(../img/icons/icone-map-localization.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  width: 35px;
+  height: 35px;
+}
+.icone-local-proximos {
+  background-image: url(../img/icons/icone-zoom-symbol.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  width: 35px;
+  height: 35px;
+}
+.icone-cidade {
+  background-image: url(../img/icons/icone-city-hall.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  width: 35px;
+  height: 35px;
+}
+.icone-cadastrar {
+  background-image: url(../img/icons/icone-paper-list-and-a-pencil.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  width: 35px;
+  height: 35px;
+}
+
+.icone-performance {
+  background-image: url(../img/icons/icone-performance.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 27px 27px;
+  width: 35px;
+  height: 35px;
+}
+.icone-notificacoes {
+  background-image: url(../img/icons/icone-notificacoes.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30px 28px;
+  width: 35px;
+  height: 35px;
+}
+.icone-conquistas {
+  background-image: url(../img/icons/icone-conquistas.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 31px 31px;
+  width: 35px;
+  height: 35px;
+}
+.icone-desafios {
+  background-image: url(../img/icons/icone-desafios.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 26px 35px;
+  width: 35px;
+  height: 35px;
+}
+.icone-sair {
+  background-image: url(../img/icons/icone-power-button-outline.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  width: 35px;
+  height: 35px;
+}
+
+.icone-list-assistencia {
+  background-image: url(../img/list_icon_assistencia.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 35px 35px;
+  width: 35px;
+  height: 35px;
+}
+
+.icone-list-cfas {
+  background-image: url(../img/list_icon_cfas.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 35px 35px;
+  width: 35px;
+  height: 35px;
+}
+
+.icone-list-escola {
+  background-image: url(../img/list_icon_escola.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 35px 35px;
+  width: 35px;
+  height: 35px;
+}
+
+.icone-list-livraria {
+  background-image: url(../img/list_icon_livraria.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 35px 35px;
+  width: 35px;
+  height: 35px;
+}
+
+.icone-list-centro {
+  background-image: url(../img/list_icon_entidade.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 35px 35px;
+  width: 35px;
+  height: 35px;
+}
+
+/*********************
+*   Ateracao do FTI
+*********************/
+
+.circulo {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    text-align: center;
+    color: white;
+    font-family: "open sans", sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0px 5px 5px 0px;
+    float: right;
+}
+
+.circulo.azul {
+    background: linear-gradient(to bottom, rgb(112, 206, 242) 15%, rgb(0, 173, 239) 55%);
+}
+
+.circulo.verde {
+    background: linear-gradient(to bottom, rgb(75, 248, 154) 15%, rgb(0, 210, 97) 55%);
+}
+
+.circulo.amarelo {
+    background: linear-gradient(to bottom, rgb(254, 219, 83) 15%, rgb(255, 190, 0) 55%);
+}
+
+.circulo.laranja {
+    background: linear-gradient(to bottom, rgb(254, 145, 0) 15%, rgb(239, 83, 0) 55%);
+}
+
+#smallBox {
+    float:left;
+    width: 84px;
+    height: 94px;
+    margin: -5px 0px 0px -35px;
+}
+
+.subtitle {
+    margin: -60px 0px 0px 0px;
+    margin-left: 5px;
+}
+
+.legenda {
+    border-top: 2px solid #EDEDED;
+}
+
+.scroll-view {
+    background-color: white;
+}
+
+/*********************
+*   Header e sub header da tela placar metas
+*********************/
+
+.subHeaderFilter {
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.sub-header-placar-hide {
+    top: -59px!important;
+}
+
+.sub-header-placar-transition {
+    transition: top .5s ease;
+}
+
+.item-periodo {
+    text-align: left;
+    font-size: 14px;
+    padding-left: 7px;
+    padding-right: 17px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    border: 2px solid #d8d8d8!important;
+    border-radius: 7px;
+}
+
+/*********************
+*   Icone de compartilhar
+*********************/
+.icone-compartilhar-branco {
+    background-image: url(../img/icons/icone-compartilhar-branco.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 27px 27px;
+    width: 27px;
+    height: 27px;
+}
+
+.icone-compartilhar-azul {
+    background-image: url(../img/icons/icone-compartilhar-azul.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 27px 27px;
+    width: 27px;
+    height: 27px;
+}

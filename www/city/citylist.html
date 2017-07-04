@@ -1,0 +1,49 @@
+<ion-view>
+  <ion-nav-title style="text-transform: uppercase;">
+      Cidades
+  </ion-nav-title>
+
+  <ion-nav-buttons side="right">
+      <!-- Usando "on-click" no iOS abre duas vezes a função 'compartilhar()' por isso devemos usar 'on-touch' -->
+      <button class="button button-icon button-clear" on-touch="compartilhar()">
+          <div class="icone-compartilhar-branco"></div>
+      </button>
+  </ion-nav-buttons>
+
+  <ion-content id="main" scroll=false>
+
+    <!--------------------------------------------------------------------------------------------------->
+    <!-- Produtos -->
+    <!--------------------------------------------------------------------------------------------------->
+    <div id="places-container">
+
+        <!-- Cabeçalho (colunas) -->
+        <div class="row">
+
+            <!-- Nome do Produto -->
+            <div class="col col-100" ng-class="[{'coluna-filtro': cities.citiesPredicate == 'city'}]">
+                Cidade
+            </div>
+
+        </div>
+
+        <!-- Lista de informações de cities -->
+        <ion-scroll direction="y" scroll-watch id="places-scrollInt" scroll>
+
+            <!-- cities-scroll -->
+            <div id="places-itens" class="scroll">
+                <a href on-tap="onClickItem({country: country, state: state, city: dados.city})" ng-repeat='dados in cities.list | array | orderBy:cities.citiesPredicate:cities.citiesDirecao'>
+                    <div class="row" ng-style="$index%2 == 0 && {'background-color':'#E6F2F7'}">
+
+                        <!-- Nome do Produto -->
+                        <div class="col col-100">
+                            <span ng-bind="dados.city"></span><br \>
+                        </div>
+
+                    </div>
+                  </a>
+              </div>
+          </ion-scroll>
+      </div>
+  </ion-content>
+</ion-view>

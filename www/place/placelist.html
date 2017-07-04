@@ -1,0 +1,81 @@
+<ion-view>
+    <ion-nav-title style="text-transform: uppercase;">
+        Instituições
+    </ion-nav-title>
+
+    <ion-nav-buttons side="right">
+        <!-- Usando "on-click" no iOS abre duas vezes a função 'compartilhar()' por isso devemos usar 'on-touch' -->
+        <button class="button button-icon button-clear" on-touch="compartilhar()">
+            <div class="icone-compartilhar-branco"></div>
+        </button>
+    </ion-nav-buttons>
+
+    <ion-content id="main" scroll=false>
+
+        <!--------------------------------------------------------------------------------------------------->
+        <!-- Produtos -->
+        <!--------------------------------------------------------------------------------------------------->
+        <div id="places-container">
+
+            <!-- Cabeçalho (colunas) -->
+            <div class="row">
+
+                <!-- Nome e Endereço -->
+                <div class="col col-60" ng-class="[{'coluna-filtro': places.placesPredicate == 'name'}]"
+                    ng-click="onClickColunaProdutos('name', C_DIRECAO.reverse)">
+                    Nome
+                    <img class="centeralizar" src="img/setaicone_seta_up.png" ng-show="places.placesPredicate == 'name'" ng-class="{reverse:places.placesDirecao}">
+                    <img class="centeralizar" src="img/setaicone_seta_up_off.png" ng-show="places.placesPredicate != 'name'" ng-class="{reverse:false}">
+                </div>
+
+                <!-- Dados Estado/Cidade/Distancia -->
+                <div class="col col-20" ng-class="{'coluna-filtro': places.placesPredicate == 'distancia'}" ng-click="onClickColunaProdutos('distancia', C_DIRECAO.forward)">
+                    Dist
+                    <img class="centeralizar" src="img/setaicone_seta_up.png" ng-show="places.placesPredicate == 'distancia'" ng-class="{reverse:places.placesDirecao}">
+                    <img class="centeralizar" src="img/setaicone_seta_up_off.png" ng-show="places.placesPredicate != 'distancia'" ng-class="{reverse:false}">
+                </div>
+
+                <!-- Tipo Instituição -->
+                <div class="col col-20" ng-class="{'coluna-filtro' : places.placesPredicate == 'tipo'}" ng-click="onClickColunaProdutos('tipo', C_DIRECAO.forward)">
+                    Tipo
+                    <img class="centeralizar" src="img/setaicone_seta_up.png" ng-show="places.placesPredicate == 'tipo'" ng-class="{reverse:places.placesDirecao}">
+                    <img class="centeralizar" src="img/setaicone_seta_up_off.png" ng-show="places.placesPredicate != 'tipo'" ng-class="{reverse:false}">
+                </div>
+
+            </div>
+
+            <!-- Lista de informações de places -->
+            <ion-scroll direction="y" scroll-watch id="places-scrollInt" scroll>
+
+                <!-- places-scroll -->
+                <div id="places-itens" class="scroll">
+                    <a href on-tap="onClickItem({ordemProduto: dados.name})" ng-repeat='dados in places.list | array | orderBy:places.placesPredicate:places.placesDirecao'>
+                        <div class="row" ng-style="$index%2 == 0 && {'background-color':'#E6F2F7'}">
+
+                            <!-- Nome e Endereco -->
+                            <div class="col col-60">
+                                <span ng-bind="dados.name"></span><br \>
+                                <small style="color: gray" ng-bind="dados.endereco"></small><br \>
+                                <small style="color: gray" ng-bind="dados.bairro"></small>
+                            </div>
+
+                            <!-- Dados Estado/Cidade/Distancia -->
+                            <div class="col col-20">
+                                <span ng-bind="dados.estado"></span><br />
+                                <small style="color: gray" ng-bind="dados.cidade"></small>
+                                <p style="color: #FF6666" ng-bind="(dados.distancia | number:0) + ' km'"></p>
+
+                            </div>
+
+                            <!-- Tipo Instituicao -->
+                            <div class="col col-20">
+                               <i class="icon icone-list-{{dados.tipo}}"></i>
+                            </div>
+
+                          </div>
+                    </a>
+                </div>
+            </ion-scroll>
+        </div>
+  </ion-content>
+</ion-view>

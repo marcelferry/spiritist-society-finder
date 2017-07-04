@@ -1,0 +1,40 @@
+{
+  "name": "ngmask",
+  "homepage": "https://github.com/douglaslira/ngmask",
+  "authors": [
+    "Douglas Lira <douglas.lira.web@gmail.com>"
+  ],
+  "description": "Directive created to apply mask on input values",
+  "main": "",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "AngularJS",
+    "mask",
+    "directive",
+    "douglas",
+    "lira"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.0"
+  },
+  "_release": "35e7e408ba",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "35e7e408ba3f4cb968665fb3cae2182709dc0cc4"
+  },
+  "_source": "https://github.com/douglaslira/ngmask.git",
+  "_target": "*",
+  "_originalSource": "ngmask",
+  "_direct": true
+}
